@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package prime;
+
+option go_package= "example.com/prime/prime_pb/";
+
+
+message Req {
+    int32 number=1;
+}
+
+message Res {
+    int32 factor=1;
+}
+
+service PrimeService {
+    rpc CalculatePrime (Req) returns (stream Res);
+}
